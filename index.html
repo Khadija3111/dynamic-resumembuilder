@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>Interactive Resume Builder</h1>
+    
+    <div class="resume-builder">
+        <div class="form-section">
+            <h2>Enter Your Information</h2>
+            <form id="resumeForm">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="pictureInput">Profile Picture:</label>
+                    <input type="file" id="pictureInput" accept="image/*">
+                    
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="phone">Contact:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" required>
+                    
+                    <label for="linkedin">LinkedIn:</label>
+                    <input type="text" id="linkedin" name="linkedin">
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Education & Experience</legend>
+                    <label for="education">Education:</label>
+                    <textarea id="education" name="education" rows="3" required></textarea>
+                    
+                    <label for="experience">Experience:</label>
+                    <textarea id="experience" name="experience" rows="3" required></textarea>
+                </fieldset>
+                
+                <fieldset id="skillsSection">
+                    <legend>Skills</legend>
+                    <label for="skills">Skills:</label>
+                    <textarea id="skills" name="skills" rows="3" required></textarea>
+                    
+                    <label for="projects">Projects:</label>
+                    <textarea id="projects" name="projects" rows="3" required></textarea>
+                </fieldset>
+                
+                <button type="button" id="generateResumeButton">Generate Resume</button>
+            </form>
+        </div>
+        
+        <div class="resume-section" id="resumeSection">
+            <h2>Generated Resume</h2>
+            <div id="resumeContent" class="resume">
+                <!-- Left Column -->
+                <div class="resume-left">
+                    <div class="profile-header">
+                        <img id="profilePicture" class="profile-picture" src="" alt="Profile Picture">
+                        <h2 id="resumeName"></h2> <!-- Name at the top -->
+                    </div>
+                    <p id="aboutMe"></p> <!-- About Me section below the name -->
+                    <h3>Contact Information</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i><p id="resumeEmail"></p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-phone"></i><p id="resumePhone"></p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fas fa-map-marker-alt"></i><p id="resumeAddress"></p>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fab fa-linkedin"></i><p id="resumeLinkedin"></p>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div class="resume-right">
+                    <h3>Education</h3>
+                    <p id="resumeEducation"></p>
+                    <h3>Experience</h3>
+                    <p id="resumeExperience"></p>
+                    <h3>Skills</h3>
+                    <ul id="resumeSkills" class="skills-list"></ul>
+                    <h3>Projects</h3>
+                    <p id="resumeProjects"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
